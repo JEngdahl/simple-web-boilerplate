@@ -9,6 +9,6 @@ jobs:
       - name: GitHub Checkout
         uses: actions/checkout@v1
       - name: Build project
-        run: npm
+        run: npm install
       - name: Run tests
         run: npm test
