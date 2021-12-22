@@ -1,0 +1,12 @@
+name: Tests
+
+on: push
+
+jobs:
+  jest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub Checkout
+        uses: actions/checkout@v1
+      - name: Run tests
+        run: npm test
