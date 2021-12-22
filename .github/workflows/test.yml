@@ -8,6 +8,13 @@ jobs:
     steps:
       - name: GitHub Checkout
         uses: actions/checkout@v1
+      - name: Bundler Cache
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
       - name: Build project
         run: npm install
       - name: Run tests
