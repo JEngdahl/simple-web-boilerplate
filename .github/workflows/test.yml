@@ -8,5 +8,7 @@ jobs:
     steps:
       - name: GitHub Checkout
         uses: actions/checkout@v1
+      - name: Build project
+        run: npm
       - name: Run tests
         run: npm test
